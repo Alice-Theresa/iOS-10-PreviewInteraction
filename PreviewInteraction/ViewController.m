@@ -26,6 +26,8 @@
     self.previewInteraction.delegate = self;
 }
 
+#pragma mark - Preview阶段，相当于Peek，必须实现
+
 - (void)previewInteraction:(UIPreviewInteraction *)previewInteraction didUpdatePreviewTransition:(CGFloat)transitionProgress ended:(BOOL)ended {
 
     if (ended) {
@@ -33,15 +35,21 @@
     }
 }
 
+#pragma mark - Commit阶段，相当于Pop，可选
+
 - (void)previewInteraction:(UIPreviewInteraction *)previewInteraction didUpdateCommitTransition:(CGFloat)transitionProgress ended:(BOOL)ended {
     
     self.animator.fractionComplete = transitionProgress;
 }
 
+#pragma mark - 停止交互，必须实现
+
 - (void)previewInteractionDidCancel:(UIPreviewInteraction *)previewInteraction {
 
     [self.imageView removeFromSuperview];
 }
+
+#pragma mark - Preview设置
 
 - (void)previewSetting {
     
@@ -61,6 +69,8 @@
         effectView.effect = nil;
     }];
 }
+
+#pragma mark - 关闭Pop出的页面
 
 - (void)close {
     
