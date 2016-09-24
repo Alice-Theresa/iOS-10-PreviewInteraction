@@ -1,12 +1,13 @@
 # iOS-10-PreviewInteraction
-
+预览
 ![Demo.gif](./Photo/Demo.gif)
 
 在iOS 10中苹果推出了两个新的API，UIPreviewInteraction和UIPreviewInteractionDelegate
+
 为开发者提供了自定义3D Touch来进行UI交互的方法
 
 
-#####UIPreviewInteractionDelegate中有四个方法，其中有两个必须实现：
+###UIPreviewInteractionDelegate中有四个方法，其中有两个必须实现：
 
 ```
 - (void)previewInteraction:(UIPreviewInteraction *)previewInteraction
@@ -26,7 +27,7 @@ Preview阶段，相当于Peek，transitionProgress提供了一个从0.0到1.0的
 ```
 当用户放弃按压或者因为其他原因需要停止交互时（例如接到一个电话）将调用此方法，一般来说，你应该将didUpdatePreviewTransition里实现的内容在这里全部还原回去
 
-#####另外两个：
+###另外两个：
 ```
 - (void)previewInteraction:(UIPreviewInteraction *)previewInteraction
  didUpdateCommitTransition:(CGFloat)transitionProgress
@@ -45,7 +46,7 @@ transitionProgress和ended的用法与didUpdatePreviewTransition类似
 ```
 在按压的最一开始时将会调用此方法，返回NO将不会执行Perview Interaction，可用来判断是否响应用户的按压
 
-#####UIPreviewInteraction
+###UIPreviewInteraction
 
 ```
 - (instancetype)initWithView:(UIView *)view;

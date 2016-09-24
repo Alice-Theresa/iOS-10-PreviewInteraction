@@ -49,6 +49,14 @@
     [self.imageView removeFromSuperview];
 }
 
+-(BOOL)previewInteractionShouldBegin:(UIPreviewInteraction *)previewInteraction {
+    
+    if ([self.imageView isDescendantOfView:self.view]) {
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark - Preview设置
 
 - (void)previewSetting {
