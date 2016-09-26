@@ -1,5 +1,7 @@
 # iOS-10-PreviewInteraction
+
 预览
+
 ![Demo.gif](./Photo/Demo.gif)
 
 在iOS 10中苹果推出了两个新的API，UIPreviewInteraction和UIPreviewInteractionDelegate

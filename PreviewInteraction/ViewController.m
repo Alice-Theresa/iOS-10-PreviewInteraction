@@ -49,6 +49,8 @@
     [self.imageView removeFromSuperview];
 }
 
+#pragma mark - 按压最开始时触发，可选 
+
 -(BOOL)previewInteractionShouldBegin:(UIPreviewInteraction *)previewInteraction {
     
     if ([self.imageView isDescendantOfView:self.view]) {
