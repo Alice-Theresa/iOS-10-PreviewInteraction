@@ -49,7 +49,7 @@
     [self.imageView removeFromSuperview];
 }
 
-#pragma mark - 按压最开始时触发，可选 
+#pragma mark - 最一开始按压时触发，可选
 
 -(BOOL)previewInteractionShouldBegin:(UIPreviewInteraction *)previewInteraction {
     
